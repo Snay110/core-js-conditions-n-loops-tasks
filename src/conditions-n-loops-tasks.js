@@ -21,9 +21,13 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  if (number >= 0) {
+    return true;
+  }
+  return false;
 }
+isPositive();
 
 /**
  * Returns the maximum of three numbers without using Array and Math classes methods.
@@ -38,9 +42,16 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a >= b && a >= c) {
+    return a;
+  }
+  if (b >= a && b >= c) {
+    return b;
+  }
+  return c;
 }
+getMaxNumber(3, 5, 0.2);
 
 /**
  * Checks if a queen can capture a king in the next move on an 8x8 chessboard.
@@ -60,10 +71,8 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
-}
-
+function canQueenCaptureKing(/* queen, king */) {}
+throw new Error('Not implemented');
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -82,9 +91,43 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (a + b <= c || a + c <= b || c + b <= a) {
+    return false;
+  }
+  if (a === b || b === c || a === c) {
+    return true;
+  }
+  return false;
 }
+// No code was selected, so I'll provide a general improvement for the entire file
+
+// Add JSDoc comments for better documentation and readability
+// Use consistent naming conventions (e.g., camelCase)
+// Remove unused variables and functions
+// Improve function names for better clarity
+// Use early returns to simplify code
+// Remove redundant comments
+
+// Example improvements:
+
+/**
+ * Determines whether a given number is positive. Zero is considered positive.
+ * This function does not use Number or Math class methods.
+ *
+ * @param {number} number - The number to check.
+ * @return {boolean} True if the number is positive or zero, false otherwise.
+ */
+function isPositiveNumber(number) {
+  return number >= 0;
+}
+
+/**
+ * Returns the maximum of three numbers without using Array and Math classes methods.
+ *
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @param {number} c))
 
 /**
  * Converts a number to Roman numerals. The number will be between 1 and 39.
